@@ -32,7 +32,7 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate {
         parser.parse()
         
         
-        let date = dataXMLDictionary["pubDate"]
+        _ = dataXMLDictionary["pubDate"]
         
         
 
