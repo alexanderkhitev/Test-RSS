@@ -17,15 +17,16 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate {
     var currentElement = ""
     var dataXMLDictionary = [String : String]()
     var dictionaryArray = [[String : String]]()
+    var checkDictionary = [[String : String]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.definesPresentationContext = true
         
         
-//        let url = NSURL(string: "http://9to5mac.com/feed")!
+        let url = NSURL(string: "http://9to5mac.com/feed")!
 //        let url = NSURL(string: "http://lenta.ru/rss")!
-        let url = NSURL(string: "http://feeds.feedburner.com/appcoda")!
+//        let url = NSURL(string: "http://feeds.feedburner.com/appcoda")!
   
         parser = NSXMLParser(contentsOfURL: url)
         parser.delegate = self
@@ -129,25 +130,25 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate {
     }
     
     func parser(parser: NSXMLParser, foundCharacters string: String) {
-        if (currentElement == "title" || currentElement == "link" || currentElement == "pubDate") && currentElement != "9to5Mac" {
+        if currentElement == "title" || currentElement == "link" || currentElement == "pubDate" {
             foundCharacter += string
+//            print(foundCharacter)
         }
+        print(foundCharacter)
     }
     
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        if currentElement != "9to5Mac" {
+        
         dataXMLDictionary[currentElement] = foundCharacter
-            
         
         foundCharacter = ""
-            if dataXMLDictionary["title"] != "AppCoda" {
         
-                dictionaryArray.append(dataXMLDictionary)
-                
-            }
+        
+        if currentElement == "pubDate" {
+            dictionaryArray.append(dataXMLDictionary)
+        }
         
         print(dictionaryArray.last, dictionaryArray.count)
-        }
     }
  
 
