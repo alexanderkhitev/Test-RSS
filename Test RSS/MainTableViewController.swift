@@ -9,17 +9,26 @@
 import UIKit
 import AVFoundation
 import Alamofire
+import SafariServices
 
 class MainTableViewController: UITableViewController, NSXMLParserDelegate {
 
+    // MARK: - Iboutlet 
+    @IBOutlet weak var viewForImage: UIView!
+    @IBOutlet weak var generalImageView: UIImageView!
+    
+    
     var parser: NSXMLParser!
     let notificationCenter = NSNotificationCenter.defaultCenter()
+    let fileManager = NSFileManager.defaultManager()
+    
     
     var foundCharacter = ""
     var currentElement = ""
     var dataXMLDictionary = [String : String]()
     var dictionaryArray = [[String : String]]()
     var checkDictionary = [[String : String]]()
+    
 
     
     override func viewDidLoad() {
@@ -36,13 +45,34 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate {
         parser.parse()
         
         
-        _ = dataXMLDictionary["pubDate"]
+
+        let megaURL = NSURL(string: "http://www.appcoda.com/building-rss-reader-using-uisplitviewcontroller-uipopoverviewcontroller/")!
         
+        print(megaURL)
         
 
-        
+    
         
      
+        Alamofire.request(.GET, megaURL).responseData { (data) -> Void in
+            if data.result.isSuccess {
+                do {
+                    let json = try NSJSONSerialization.JSONObjectWithData(data.result.value!, options: NSJSONReadingOptions.AllowFragments) as! [String : AnyObject]
+                    
+                    
+                    print("hello json")
+                    print(json)
+                } catch {
+                    print("bye json")
+                }
+                print("is success")
+                
+                    
+            } else {
+                print("is failure")
+            }
+        }
+        
     }
     
 
@@ -72,22 +102,10 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate {
         let titleFile = data["title"]
         let dateFile = data["pubDate"]?.stringByReplacingOccurrencesOfString("+0000", withString: "\0")
         
-        print(titleFile)
+//        print(titleFile)
 
         
-        let link = data["link"]!
-        print("link \(link)")
-    
 
-        
-   
-
-        Alamofire.request(.POST, link).responseData { (response) -> Void in
-            let data = response.data
-            print(data)
-            
-        }
-    
         
         
         
@@ -167,7 +185,7 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate {
             dictionaryArray.append(dataXMLDictionary)
         }
         
-//        print(dictionaryArray, dictionaryArray.count)
+       
 
     }
  
@@ -178,14 +196,31 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate {
     func parser(parser: NSXMLParser, validationErrorOccurred validationError: NSError) {
         print(validationError.localizedDescription)
     }
-    /*
+    
     // MARK: - Navigation
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: .None)
+        let currentNews = dictionaryArray[indexPath.row]
+        print(currentNews)
+        
+        let link = currentNews["link"]!
+        
+        let linkString = (link as NSString).substringFromIndex(3)
+    
+     
+     
+        let url = NSURL(string: linkString)
+        
+        
+        let safariController = SFSafariViewController(URL: url!)
+        presentViewController(safariController, animated: true, completion: nil)
+        
+    }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }

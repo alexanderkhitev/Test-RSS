@@ -15,9 +15,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="0Ww-DC-CND">
+                            <rect key="frame" x="0.0" y="64" width="600" height="141"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Mp-Kk-peB">
+                                    <rect key="frame" x="8" y="8" width="584" height="133"/>
+                                    <animations/>
+                                </imageView>
+                            </subviews>
+                            <animations/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="0Mp-Kk-peB" firstAttribute="leading" secondItem="0Ww-DC-CND" secondAttribute="leadingMargin" id="3Kk-jQ-Mh2"/>
+                                <constraint firstItem="0Mp-Kk-peB" firstAttribute="top" secondItem="0Ww-DC-CND" secondAttribute="topMargin" id="F4L-17-tFY"/>
+                                <constraint firstItem="0Mp-Kk-peB" firstAttribute="trailing" secondItem="0Ww-DC-CND" secondAttribute="trailingMargin" id="jBu-fe-OGn"/>
+                                <constraint firstAttribute="bottom" secondItem="0Mp-Kk-peB" secondAttribute="bottom" id="ptC-fU-kIm"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="90" id="bw1-BA-yV8" customClass="MainTableViewCell" customModule="Test_RSS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="90"/>
+                                <rect key="frame" x="0.0" y="233" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bw1-BA-yV8" id="MFb-5S-GfM">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
@@ -74,7 +92,13 @@
                             <outlet property="delegate" destination="UHW-YX-KKe" id="sld-t7-e9Y"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="IkE-Pc-1xg"/>
+                    <navigationItem key="navigationItem" id="IkE-Pc-1xg">
+                        <nil key="title"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="generalImageView" destination="0Mp-Kk-peB" id="soG-LH-Jxd"/>
+                        <outlet property="viewForImage" destination="0Ww-DC-CND" id="tW2-dW-UPV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Lc-b5-7Ho" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

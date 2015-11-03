@@ -18,6 +18,7 @@
 		A6BBF9371BE757C900D804ED /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BBF9361BE757C900D804ED /* MainTableViewController.swift */; };
 		A6BBF9391BE757D500D804ED /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BBF9381BE757D500D804ED /* MainTableViewCell.swift */; };
 		A6BBF93B1BE7590700D804ED /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BBF93A1BE7590700D804ED /* XMLParser.swift */; };
+		A6CAEE9E1BE9360F00E94A12 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CAEE9D1BE9360F00E94A12 /* SafariServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		A6BBF9361BE757C900D804ED /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		A6BBF9381BE757D500D804ED /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		A6BBF93A1BE7590700D804ED /* XMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
+		A6CAEE9D1BE9360F00E94A12 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		C71B4F5084D6E1AA45739680 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6CAEE9E1BE9360F00E94A12 /* SafariServices.framework in Frameworks */,
 				08E56E78ABB23C2474C2AC1F /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +156,7 @@
 		F101A5E17C297ABB68D4FAAF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A6CAEE9D1BE9360F00E94A12 /* SafariServices.framework */,
 				114FAF04D7E6F7AB01BDFF46 /* Pods.framework */,
 			);
 			name = Frameworks;
