@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+import Alamofire
 
 class MainTableViewController: UITableViewController, NSXMLParserDelegate {
 
@@ -18,6 +20,7 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate {
     var dataXMLDictionary = [String : String]()
     var dictionaryArray = [[String : String]]()
     var checkDictionary = [[String : String]]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +28,8 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate {
         
         
 //        let url = NSURL(string: "http://9to5mac.com/feed")!
-        let url = NSURL(string: "http://lenta.ru/rss")!
-//        let url = NSURL(string: "http://feeds.feedburner.com/appcoda")!
+//        let url = NSURL(string: "http://lenta.ru/rss")!
+        let url = NSURL(string: "http://feeds.feedburner.com/appcoda")!
   
         parser = NSXMLParser(contentsOfURL: url)
         parser.delegate = self
@@ -69,13 +72,29 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate {
         let titleFile = data["title"]
         let dateFile = data["pubDate"]?.stringByReplacingOccurrencesOfString("+0000", withString: "\0")
         
-       
+        print(titleFile)
+
+        
+        let link = data["link"]!
+        print("link \(link)")
+    
+
+        
+   
+
+        Alamofire.request(.POST, link).responseData { (response) -> Void in
+            let data = response.data
+            print(data)
+            
+        }
+    
         
         
         
 
         cell.titleLabel.text = titleFile
         cell.dateLabel.text = dateFile
+//        cell.imageURL?.image = image
 
         return cell
     }
@@ -148,7 +167,7 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate {
             dictionaryArray.append(dataXMLDictionary)
         }
         
-        print(dictionaryArray, dictionaryArray.count)
+//        print(dictionaryArray, dictionaryArray.count)
 
     }
  

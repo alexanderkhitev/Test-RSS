@@ -27,29 +27,39 @@
                                             <rect key="frame" x="422" y="8" width="170" height="16"/>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="16" id="HVx-lG-wYO"/>
-                                                <constraint firstAttribute="width" constant="170" id="I7P-ES-xZ9"/>
+                                                <constraint firstAttribute="width" constant="170" id="GjP-Uu-ElJ"/>
+                                                <constraint firstAttribute="height" constant="16" id="vUb-Bz-TLU"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nuv-ln-i3D">
-                                            <rect key="frame" x="8" y="32" width="584" height="49"/>
+                                            <rect key="frame" x="117" y="32" width="475" height="49"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OLv-gN-0wj">
+                                            <rect key="frame" x="8" y="8" width="101" height="73"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="101" id="4SX-tc-XU7"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="bottom" secondItem="MFb-5S-GfM" secondAttribute="bottomMargin" id="43B-sU-I6w"/>
-                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="trailing" secondItem="MFb-5S-GfM" secondAttribute="trailingMargin" id="Cme-ao-weG"/>
-                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="leading" secondItem="MFb-5S-GfM" secondAttribute="leadingMargin" id="K2G-i4-fkh"/>
-                                        <constraint firstItem="0Xi-EC-jgD" firstAttribute="top" secondItem="MFb-5S-GfM" secondAttribute="topMargin" id="WQ2-R4-1iy"/>
-                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="top" secondItem="0Xi-EC-jgD" secondAttribute="bottom" constant="8" symbolic="YES" id="WWu-az-816"/>
-                                        <constraint firstItem="0Xi-EC-jgD" firstAttribute="trailing" secondItem="Nuv-ln-i3D" secondAttribute="trailing" id="pVK-ib-q8u"/>
+                                        <constraint firstItem="OLv-gN-0wj" firstAttribute="top" secondItem="MFb-5S-GfM" secondAttribute="topMargin" id="Gwy-U7-3o4"/>
+                                        <constraint firstItem="0Xi-EC-jgD" firstAttribute="top" secondItem="OLv-gN-0wj" secondAttribute="top" id="LM2-ey-82d"/>
+                                        <constraint firstItem="0Xi-EC-jgD" firstAttribute="trailing" secondItem="MFb-5S-GfM" secondAttribute="trailingMargin" id="MEb-xu-RFS"/>
+                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="leading" secondItem="OLv-gN-0wj" secondAttribute="trailing" constant="8" symbolic="YES" id="WO2-XG-nvl"/>
+                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="bottom" secondItem="OLv-gN-0wj" secondAttribute="bottom" id="YfT-Co-oIf"/>
+                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="bottom" secondItem="MFb-5S-GfM" secondAttribute="bottomMargin" id="ZAV-PY-dHt"/>
+                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="trailing" secondItem="0Xi-EC-jgD" secondAttribute="trailing" id="b2t-RR-nHf"/>
+                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="top" secondItem="0Xi-EC-jgD" secondAttribute="bottom" constant="8" symbolic="YES" id="rT0-Mn-dJe"/>
+                                        <constraint firstItem="OLv-gN-0wj" firstAttribute="leading" secondItem="MFb-5S-GfM" secondAttribute="leadingMargin" id="wYv-yl-gs1"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
