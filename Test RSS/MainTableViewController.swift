@@ -24,8 +24,8 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate {
         self.definesPresentationContext = true
         
         
-        let url = NSURL(string: "http://9to5mac.com/feed")!
-//        let url = NSURL(string: "http://lenta.ru/rss")!
+//        let url = NSURL(string: "http://9to5mac.com/feed")!
+        let url = NSURL(string: "http://lenta.ru/rss")!
 //        let url = NSURL(string: "http://feeds.feedburner.com/appcoda")!
   
         parser = NSXMLParser(contentsOfURL: url)
@@ -64,17 +64,18 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! MainTableViewCell
         
 //
-       
         
         let data = dictionaryArray[indexPath.row]
         let titleFile = data["title"]
-        let description = data["description"]
+        let dateFile = data["pubDate"]?.stringByReplacingOccurrencesOfString("+0000", withString: "\0")
+        
+       
+        
+        
+        
 
-//        cell.titleLabel.text = "Hello"
-        
-        
         cell.titleLabel.text = titleFile
-        cell.descriptionLabel.text = description
+        cell.dateLabel.text = dateFile
 
         return cell
     }
@@ -132,26 +133,32 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate {
     func parser(parser: NSXMLParser, foundCharacters string: String) {
         if currentElement == "title" || currentElement == "link" || currentElement == "pubDate" {
             foundCharacter += string
-//            print(foundCharacter)
         }
-        print(foundCharacter)
     }
     
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         
+        
         dataXMLDictionary[currentElement] = foundCharacter
         
-        foundCharacter = ""
         
+        foundCharacter = ""
         
         if currentElement == "pubDate" {
             dictionaryArray.append(dataXMLDictionary)
         }
         
-        print(dictionaryArray.last, dictionaryArray.count)
+        print(dictionaryArray, dictionaryArray.count)
+
     }
  
+    func parser(parser: NSXMLParser, parseErrorOccurred parseError: NSError) {
+        print(parseError.localizedDescription)
+    }
 
+    func parser(parser: NSXMLParser, validationErrorOccurred validationError: NSError) {
+        print(validationError.localizedDescription)
+    }
     /*
     // MARK: - Navigation
 

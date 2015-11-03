@@ -23,49 +23,38 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nuv-ln-i3D">
-                                            <rect key="frame" x="8" y="8" width="536" height="27"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xi-EC-jgD">
-                                            <rect key="frame" x="552" y="11" width="40" height="21"/>
+                                            <rect key="frame" x="422" y="8" width="170" height="16"/>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="40" id="e9S-dw-pBO"/>
+                                                <constraint firstAttribute="height" constant="16" id="HVx-lG-wYO"/>
+                                                <constraint firstAttribute="width" constant="170" id="I7P-ES-xZ9"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTU-7S-M7M">
-                                            <rect key="frame" x="8" y="43" width="584" height="38"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nuv-ln-i3D">
+                                            <rect key="frame" x="8" y="32" width="584" height="49"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstItem="qTU-7S-M7M" firstAttribute="top" secondItem="Nuv-ln-i3D" secondAttribute="bottom" constant="8" symbolic="YES" id="5gu-IJ-yun"/>
-                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="top" secondItem="MFb-5S-GfM" secondAttribute="topMargin" id="CGi-K2-Dlg"/>
-                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="leading" secondItem="MFb-5S-GfM" secondAttribute="leadingMargin" id="DLd-gE-g1d"/>
-                                        <constraint firstItem="qTU-7S-M7M" firstAttribute="bottom" secondItem="MFb-5S-GfM" secondAttribute="bottomMargin" id="H5G-3P-iwn"/>
-                                        <constraint firstItem="qTU-7S-M7M" firstAttribute="top" secondItem="0Xi-EC-jgD" secondAttribute="bottom" constant="11" id="Ha4-0H-G7Y"/>
-                                        <constraint firstItem="0Xi-EC-jgD" firstAttribute="trailing" secondItem="MFb-5S-GfM" secondAttribute="trailingMargin" id="ZT6-s6-0vN"/>
-                                        <constraint firstItem="0Xi-EC-jgD" firstAttribute="leading" secondItem="Nuv-ln-i3D" secondAttribute="trailing" constant="8" symbolic="YES" id="ayL-Fc-En7"/>
-                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="leading" secondItem="qTU-7S-M7M" secondAttribute="leading" id="jIs-c8-7Z8"/>
-                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="centerY" secondItem="0Xi-EC-jgD" secondAttribute="centerY" id="rze-8B-hUp"/>
-                                        <constraint firstItem="qTU-7S-M7M" firstAttribute="trailing" secondItem="0Xi-EC-jgD" secondAttribute="trailing" id="y68-RW-aUj"/>
+                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="bottom" secondItem="MFb-5S-GfM" secondAttribute="bottomMargin" id="43B-sU-I6w"/>
+                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="trailing" secondItem="MFb-5S-GfM" secondAttribute="trailingMargin" id="Cme-ao-weG"/>
+                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="leading" secondItem="MFb-5S-GfM" secondAttribute="leadingMargin" id="K2G-i4-fkh"/>
+                                        <constraint firstItem="0Xi-EC-jgD" firstAttribute="top" secondItem="MFb-5S-GfM" secondAttribute="topMargin" id="WQ2-R4-1iy"/>
+                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="top" secondItem="0Xi-EC-jgD" secondAttribute="bottom" constant="8" symbolic="YES" id="WWu-az-816"/>
+                                        <constraint firstItem="0Xi-EC-jgD" firstAttribute="trailing" secondItem="Nuv-ln-i3D" secondAttribute="trailing" id="pVK-ib-q8u"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
                                     <outlet property="dateLabel" destination="0Xi-EC-jgD" id="50y-rm-gcO"/>
-                                    <outlet property="descriptionLabel" destination="qTU-7S-M7M" id="tQG-WR-RZU"/>
                                     <outlet property="titleLabel" destination="Nuv-ln-i3D" id="NUu-9E-KAp"/>
                                 </connections>
                             </tableViewCell>
