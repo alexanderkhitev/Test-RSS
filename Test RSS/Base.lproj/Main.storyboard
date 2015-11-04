@@ -15,27 +15,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="0Ww-DC-CND">
-                            <rect key="frame" x="0.0" y="64" width="600" height="141"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Mp-Kk-peB">
-                                    <rect key="frame" x="8" y="8" width="584" height="133"/>
-                                    <animations/>
-                                </imageView>
-                            </subviews>
-                            <animations/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstItem="0Mp-Kk-peB" firstAttribute="leading" secondItem="0Ww-DC-CND" secondAttribute="leadingMargin" id="3Kk-jQ-Mh2"/>
-                                <constraint firstItem="0Mp-Kk-peB" firstAttribute="top" secondItem="0Ww-DC-CND" secondAttribute="topMargin" id="F4L-17-tFY"/>
-                                <constraint firstItem="0Mp-Kk-peB" firstAttribute="trailing" secondItem="0Ww-DC-CND" secondAttribute="trailingMargin" id="jBu-fe-OGn"/>
-                                <constraint firstAttribute="bottom" secondItem="0Mp-Kk-peB" secondAttribute="bottom" id="ptC-fU-kIm"/>
-                            </constraints>
-                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="90" id="bw1-BA-yV8" customClass="MainTableViewCell" customModule="Test_RSS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="233" width="600" height="90"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bw1-BA-yV8" id="MFb-5S-GfM">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
@@ -45,39 +27,29 @@
                                             <rect key="frame" x="422" y="8" width="170" height="16"/>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="170" id="GjP-Uu-ElJ"/>
-                                                <constraint firstAttribute="height" constant="16" id="vUb-Bz-TLU"/>
+                                                <constraint firstAttribute="width" constant="170" id="6QK-cr-vZ7"/>
+                                                <constraint firstAttribute="height" constant="16" id="XEA-wP-xHG"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nuv-ln-i3D">
-                                            <rect key="frame" x="117" y="32" width="475" height="49"/>
+                                            <rect key="frame" x="8" y="32" width="584" height="49"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OLv-gN-0wj">
-                                            <rect key="frame" x="8" y="8" width="101" height="73"/>
-                                            <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="101" id="4SX-tc-XU7"/>
-                                            </constraints>
-                                        </imageView>
                                     </subviews>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstItem="OLv-gN-0wj" firstAttribute="top" secondItem="MFb-5S-GfM" secondAttribute="topMargin" id="Gwy-U7-3o4"/>
-                                        <constraint firstItem="0Xi-EC-jgD" firstAttribute="top" secondItem="OLv-gN-0wj" secondAttribute="top" id="LM2-ey-82d"/>
-                                        <constraint firstItem="0Xi-EC-jgD" firstAttribute="trailing" secondItem="MFb-5S-GfM" secondAttribute="trailingMargin" id="MEb-xu-RFS"/>
-                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="leading" secondItem="OLv-gN-0wj" secondAttribute="trailing" constant="8" symbolic="YES" id="WO2-XG-nvl"/>
-                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="bottom" secondItem="OLv-gN-0wj" secondAttribute="bottom" id="YfT-Co-oIf"/>
-                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="bottom" secondItem="MFb-5S-GfM" secondAttribute="bottomMargin" id="ZAV-PY-dHt"/>
-                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="trailing" secondItem="0Xi-EC-jgD" secondAttribute="trailing" id="b2t-RR-nHf"/>
-                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="top" secondItem="0Xi-EC-jgD" secondAttribute="bottom" constant="8" symbolic="YES" id="rT0-Mn-dJe"/>
-                                        <constraint firstItem="OLv-gN-0wj" firstAttribute="leading" secondItem="MFb-5S-GfM" secondAttribute="leadingMargin" id="wYv-yl-gs1"/>
+                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="trailing" secondItem="0Xi-EC-jgD" secondAttribute="trailing" id="0OZ-nS-D2M"/>
+                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="top" secondItem="0Xi-EC-jgD" secondAttribute="bottom" constant="8" symbolic="YES" id="A95-Xy-L9d"/>
+                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="bottom" secondItem="MFb-5S-GfM" secondAttribute="bottomMargin" id="Ohc-Jn-uPN"/>
+                                        <constraint firstItem="0Xi-EC-jgD" firstAttribute="top" secondItem="MFb-5S-GfM" secondAttribute="topMargin" id="oe1-4C-tgM"/>
+                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="leading" secondItem="MFb-5S-GfM" secondAttribute="leadingMargin" id="r8j-fy-sH9"/>
+                                        <constraint firstItem="Nuv-ln-i3D" firstAttribute="trailing" secondItem="MFb-5S-GfM" secondAttribute="trailingMargin" id="yvM-P8-Qyf"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
@@ -95,10 +67,6 @@
                     <navigationItem key="navigationItem" id="IkE-Pc-1xg">
                         <nil key="title"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="generalImageView" destination="0Mp-Kk-peB" id="soG-LH-Jxd"/>
-                        <outlet property="viewForImage" destination="0Ww-DC-CND" id="tW2-dW-UPV"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Lc-b5-7Ho" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
