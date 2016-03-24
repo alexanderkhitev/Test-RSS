@@ -45,7 +45,6 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate, SFSaf
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! MainTableViewCell
         let data = dictionaryArray[indexPath.row]
-        print(data)
         let titleFile = data["title"]
         let dateFile = data["pubDate"]?.stringByReplacingOccurrencesOfString("+0000", withString: "\0")
         cell.titleLabel.text = titleFile
@@ -67,7 +66,6 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate, SFSaf
     
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         currentElement = elementName
-//        print(currentElement)
     }
     
     func parser(parser: NSXMLParser, foundCharacters string: String) {
