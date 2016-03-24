@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 import MBProgressHUD
 
 class MainTableViewController: UITableViewController, NSXMLParserDelegate {
@@ -111,7 +110,7 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate {
     // MARK: - functions
     private func setUpParser() {
         setUpProgress()
-        guard let url = NSURL(string: "http://appleinsider.ru/feed") else { return }
+        guard let url = NSURL(string: "http://9to5mac.com/feed") else { return }
         parser = NSXMLParser(contentsOfURL: url)
         parser.delegate = self
         parser.parse()
