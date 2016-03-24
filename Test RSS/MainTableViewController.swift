@@ -21,7 +21,7 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate, SFSaf
     private var currentElement = ""
     private var dataXMLDictionary = [String : String]()
     private var dictionaryArray = [[String : String]]()
-    private var checkDictionary = [[String : String]]()
+//    private var checkDictionary = [[String : String]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,6 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate, SFSaf
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -55,7 +54,6 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate, SFSaf
         print(data)
         let titleFile = data["title"]
         let dateFile = data["pubDate"]?.stringByReplacingOccurrencesOfString("+0000", withString: "\0")
-
         cell.titleLabel.text = titleFile
         cell.dateLabel.text = dateFile
 
