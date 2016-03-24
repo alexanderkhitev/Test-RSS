@@ -62,5 +62,11 @@ extension WebShowerViewController: UIWebViewDelegate {
             self.navigationController?.popToRootViewControllerAnimated(true)
         }))
         presentViewController(alertController, animated: true, completion: nil)
+        let digit = Int64(3.5 * Double(NSEC_PER_SEC))
+        let time = dispatch_time(DISPATCH_TIME_NOW, digit)
+        dispatch_after(time, dispatch_get_main_queue()) {
+            alertController.dismissViewControllerAnimated(false, completion: nil)
+            self.navigationController?.popToRootViewControllerAnimated(true)
+        }
     }
 }

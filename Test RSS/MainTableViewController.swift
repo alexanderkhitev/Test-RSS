@@ -21,13 +21,10 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate, SFSaf
     private var currentElement = ""
     private var dataXMLDictionary = [String : String]()
     private var dictionaryArray = [[String : String]]()
-//    private var checkDictionary = [[String : String]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.definesPresentationContext = true
-        progress = MBProgressHUD.showHUDAddedTo(view, animated: true)
-        progress.removeFromSuperViewOnHide = true
         setUpParser()
     }
     
@@ -118,10 +115,16 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate, SFSaf
     
     // MARK: - functions
     private func setUpParser() {
+        setUpProgress()
         guard let url = NSURL(string: "http://appleinsider.ru/feed") else { return }
         parser = NSXMLParser(contentsOfURL: url)
         parser.delegate = self
         parser.parse()
+    }
+    
+    private func setUpProgress() {
+        progress = MBProgressHUD.showHUDAddedTo(view, animated: true)
+        progress.removeFromSuperViewOnHide = true
     }
  
 }
