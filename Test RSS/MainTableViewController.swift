@@ -12,12 +12,9 @@ import SafariServices
 
 class MainTableViewController: UITableViewController, NSXMLParserDelegate, SFSafariViewControllerDelegate {
 
-    // MARK: - Iboutlet 
-    @IBOutlet weak var viewForImage: UIView!
-    @IBOutlet weak var generalImageView: UIImageView!
+    // MARK: - IBOutlet
     
     private var parser: NSXMLParser!
-    private let notificationCenter = NSNotificationCenter.defaultCenter()
     private let fileManager = NSFileManager.defaultManager()
     
     private var foundCharacter = ""
@@ -29,8 +26,8 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate, SFSaf
     override func viewDidLoad() {
         super.viewDidLoad()
         self.definesPresentationContext = true
-        let url = NSURL(string: "http://9to5mac.com/feed")!
-//        let url = NSURL(string: "http://feeds.feedburner.com/appcoda")!
+//        let url = NSURL(string: "http://9to5mac.com/feed")!
+        guard let url = NSURL(string: "http://appleinsider.ru/feed") else { return }
   
         parser = NSXMLParser(contentsOfURL: url)
         parser.delegate = self
@@ -55,6 +52,7 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate, SFSaf
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! MainTableViewCell
         let data = dictionaryArray[indexPath.row]
+        print(data)
         let titleFile = data["title"]
         let dateFile = data["pubDate"]?.stringByReplacingOccurrencesOfString("+0000", withString: "\0")
 
