@@ -28,12 +28,7 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate, SFSaf
         self.definesPresentationContext = true
         progress = MBProgressHUD.showHUDAddedTo(view, animated: true)
         progress.removeFromSuperViewOnHide = true
-//        let url = NSURL(string: "http://9to5mac.com/feed")!
-        guard let url = NSURL(string: "http://appleinsider.ru/feed") else { return }
-  
-        parser = NSXMLParser(contentsOfURL: url)
-        parser.delegate = self
-        parser.parse()
+        setUpParser()
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,11 +60,10 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate, SFSaf
     // MARK: - functions
     
     func parserDidStartDocument(parser: NSXMLParser) {
-        print("parser start")
+        
     }
     
     func parserDidEndDocument(parser: NSXMLParser) {
-        print("End parser document 777777")
         self.tableView.reloadData()
         progress.hide(true)
     }
@@ -120,6 +114,14 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate, SFSaf
         let webShowerController = mainStoryboard.instantiateViewControllerWithIdentifier("WebShowerViewController") as! WebShowerViewController
         webShowerController.url = url
         showViewController(webShowerController, sender: self)
+    }
+    
+    // MARK: - functions
+    private func setUpParser() {
+        guard let url = NSURL(string: "http://appleinsider.ru/feed") else { return }
+        parser = NSXMLParser(contentsOfURL: url)
+        parser.delegate = self
+        parser.parse()
     }
  
 }

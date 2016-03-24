@@ -73,7 +73,7 @@
         <!--Web Shower View Controller-->
         <scene sceneID="z9s-uR-8mK">
             <objects>
-                <viewController storyboardIdentifier="WebShowerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="u0w-dc-GGk" customClass="WebShowerViewController" customModule="Test_RSS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebShowerViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="u0w-dc-GGk" customClass="WebShowerViewController" customModule="Test_RSS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vln-FR-UFS"/>
                         <viewControllerLayoutGuide type="bottom" id="iAt-cM-jfu"/>

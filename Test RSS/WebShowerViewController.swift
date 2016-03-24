@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import MBProgressHUD
 
-class WebShowerViewController: UIViewController, UIWebViewDelegate {
+class WebShowerViewController: UIViewController {
     
     // MARK: - var and let
     var url: NSURL!
-    
+    private var progress: MBProgressHUD!
     // MARK: - IBOutlets
     @IBOutlet weak var webView: UIWebView!
     
@@ -26,11 +27,7 @@ class WebShowerViewController: UIViewController, UIWebViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        print(url)
-        let urlRequest = NSURLRequest(URL: url)
-        webView.loadRequest(urlRequest)
-        webView.delegate = self 
-        
+        setUpWebView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,14 +36,31 @@ class WebShowerViewController: UIViewController, UIWebViewDelegate {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - web functions
+    private func setUpWebView() {
+        progress = MBProgressHUD.showHUDAddedTo(webView, animated: true)
+        progress.removeFromSuperViewOnHide = true
+        let urlRequest = NSURLRequest(URL: url)
+        webView.loadRequest(urlRequest)
+        webView.delegate = self
     }
-    */
+}
 
+// MARK: - UIWebViewDelegate functions
+extension WebShowerViewController: UIWebViewDelegate {
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        progress.hide(true)
+    }
+    
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
+        progress.hide(true)
+        guard let _error = error else { return }
+        print(_error.localizedDescription, _error.userInfo)
+        let alertController = UIAlertController(title: "Произошла ошибка", message: _error.localizedDescription, preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) in
+            self.navigationController?.popToRootViewControllerAnimated(true)
+        }))
+        presentViewController(alertController, animated: true, completion: nil)
+    }
 }
