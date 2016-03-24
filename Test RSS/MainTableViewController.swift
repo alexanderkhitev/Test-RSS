@@ -17,15 +17,15 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate, SFSaf
     @IBOutlet weak var viewForImage: UIView!
     @IBOutlet weak var generalImageView: UIImageView!
     
-    var parser: NSXMLParser!
-    let notificationCenter = NSNotificationCenter.defaultCenter()
-    let fileManager = NSFileManager.defaultManager()
+    private var parser: NSXMLParser!
+    private let notificationCenter = NSNotificationCenter.defaultCenter()
+    private let fileManager = NSFileManager.defaultManager()
     
-    var foundCharacter = ""
-    var currentElement = ""
-    var dataXMLDictionary = [String : String]()
-    var dictionaryArray = [[String : String]]()
-    var checkDictionary = [[String : String]]()
+    private var foundCharacter = ""
+    private var currentElement = ""
+    private var dataXMLDictionary = [String : String]()
+    private var dictionaryArray = [[String : String]]()
+    private var checkDictionary = [[String : String]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,12 +46,10 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate, SFSaf
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1 ?? 0
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return dictionaryArray.count ?? 0
     }
 
