@@ -14,9 +14,8 @@ import MBProgressHUD
 class MainTableViewController: UITableViewController, NSXMLParserDelegate, SFSafariViewControllerDelegate {
 
     // MARK: - IBOutlet
-    
+    private var progress: MBProgressHUD!
     private var parser: NSXMLParser!
-    private let fileManager = NSFileManager.defaultManager()
     
     private var foundCharacter = ""
     private var currentElement = ""
@@ -27,6 +26,8 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate, SFSaf
     override func viewDidLoad() {
         super.viewDidLoad()
         self.definesPresentationContext = true
+        progress = MBProgressHUD.showHUDAddedTo(view, animated: true)
+        progress.removeFromSuperViewOnHide = true
 //        let url = NSURL(string: "http://9to5mac.com/feed")!
         guard let url = NSURL(string: "http://appleinsider.ru/feed") else { return }
   
@@ -70,6 +71,7 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate, SFSaf
     func parserDidEndDocument(parser: NSXMLParser) {
         print("End parser document 777777")
         self.tableView.reloadData()
+        progress.hide(true)
     }
     
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
@@ -113,9 +115,11 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate, SFSaf
         let linkString = (link as NSString).substringFromIndex(3)
      
         let url = NSURL(string: linkString)
-        
-        let safariController = SFSafariViewController(URL: url!)
-        safariController.delegate = self
-        presentViewController(safariController, animated: true, completion: nil)
+ 
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let webShowerController = mainStoryboard.instantiateViewControllerWithIdentifier("WebShowerViewController") as! WebShowerViewController
+        webShowerController.url = url
+        showViewController(webShowerController, sender: self)
     }
+ 
 }

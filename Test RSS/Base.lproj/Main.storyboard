@@ -62,10 +62,47 @@
                     <navigationItem key="navigationItem" id="IkE-Pc-1xg">
                         <nil key="title"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="u0w-dc-GGk" kind="show" identifier="webViewSegue" id="LFP-fP-Onn"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Lc-b5-7Ho" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="891" y="165"/>
+        </scene>
+        <!--Web Shower View Controller-->
+        <scene sceneID="z9s-uR-8mK">
+            <objects>
+                <viewController storyboardIdentifier="WebShowerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="u0w-dc-GGk" customClass="WebShowerViewController" customModule="Test_RSS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vln-FR-UFS"/>
+                        <viewControllerLayoutGuide type="bottom" id="iAt-cM-jfu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g7C-CL-U72">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ct-bt-FcF">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Ct-bt-FcF" firstAttribute="top" secondItem="Vln-FR-UFS" secondAttribute="bottom" id="6O7-iX-JRF"/>
+                            <constraint firstAttribute="trailing" secondItem="6Ct-bt-FcF" secondAttribute="trailing" id="JAb-XN-oZ4"/>
+                            <constraint firstItem="iAt-cM-jfu" firstAttribute="top" secondItem="6Ct-bt-FcF" secondAttribute="bottom" id="Z8V-BV-MHn"/>
+                            <constraint firstItem="6Ct-bt-FcF" firstAttribute="leading" secondItem="g7C-CL-U72" secondAttribute="leading" id="tFg-Lh-GVr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="6Ct-bt-FcF" id="peU-Bh-Un1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ysx-Rc-KV7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1574" y="165"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rEV-cK-dmz">
