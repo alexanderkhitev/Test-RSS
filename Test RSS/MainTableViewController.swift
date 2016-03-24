@@ -8,10 +8,9 @@
 
 import UIKit
 import Alamofire
-import SafariServices
 import MBProgressHUD
 
-class MainTableViewController: UITableViewController, NSXMLParserDelegate, SFSafariViewControllerDelegate {
+class MainTableViewController: UITableViewController, NSXMLParserDelegate {
 
     // MARK: - IBOutlet
     private var progress: MBProgressHUD!
@@ -97,9 +96,7 @@ class MainTableViewController: UITableViewController, NSXMLParserDelegate, SFSaf
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: .None)
         let currentNews = dictionaryArray[indexPath.row]
-        print(currentNews)
-        
-        let link = currentNews["link"]!
+        guard let link = currentNews["link"] else { return }
         
         let linkString = (link as NSString).substringFromIndex(3)
      
