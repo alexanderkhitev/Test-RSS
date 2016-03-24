@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SafariServices
+import MBProgressHUD
 
 class MainTableViewController: UITableViewController, NSXMLParserDelegate, SFSafariViewControllerDelegate {
 
