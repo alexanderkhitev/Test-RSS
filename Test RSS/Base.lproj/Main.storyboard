@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Szc-ov-3ce">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Szc-ov-3ce">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -13,7 +13,6 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="3WL-AR-DFW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="90" id="bw1-BA-yV8" customClass="MainTableViewCell" customModule="Test_RSS" customModuleProvider="target">
@@ -25,7 +24,6 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xi-EC-jgD">
                                             <rect key="frame" x="422" y="8" width="170" height="16"/>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="170" id="6QK-cr-vZ7"/>
                                                 <constraint firstAttribute="height" constant="16" id="XEA-wP-xHG"/>
@@ -36,13 +34,11 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nuv-ln-i3D">
                                             <rect key="frame" x="8" y="32" width="584" height="49"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstItem="Nuv-ln-i3D" firstAttribute="trailing" secondItem="0Xi-EC-jgD" secondAttribute="trailing" id="0OZ-nS-D2M"/>
                                         <constraint firstItem="Nuv-ln-i3D" firstAttribute="top" secondItem="0Xi-EC-jgD" secondAttribute="bottom" constant="8" symbolic="YES" id="A95-Xy-L9d"/>
@@ -52,7 +48,6 @@
                                         <constraint firstItem="Nuv-ln-i3D" firstAttribute="trailing" secondItem="MFb-5S-GfM" secondAttribute="trailingMargin" id="yvM-P8-Qyf"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <animations/>
                                 <connections>
                                     <outlet property="dateLabel" destination="0Xi-EC-jgD" id="50y-rm-gcO"/>
                                     <outlet property="titleLabel" destination="Nuv-ln-i3D" id="NUu-9E-KAp"/>
@@ -67,10 +62,47 @@
                     <navigationItem key="navigationItem" id="IkE-Pc-1xg">
                         <nil key="title"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="u0w-dc-GGk" kind="show" identifier="webViewSegue" id="LFP-fP-Onn"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Lc-b5-7Ho" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="891" y="165"/>
+        </scene>
+        <!--Web Shower View Controller-->
+        <scene sceneID="z9s-uR-8mK">
+            <objects>
+                <viewController storyboardIdentifier="WebShowerViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="u0w-dc-GGk" customClass="WebShowerViewController" customModule="Test_RSS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vln-FR-UFS"/>
+                        <viewControllerLayoutGuide type="bottom" id="iAt-cM-jfu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g7C-CL-U72">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ct-bt-FcF">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Ct-bt-FcF" firstAttribute="top" secondItem="Vln-FR-UFS" secondAttribute="bottom" id="6O7-iX-JRF"/>
+                            <constraint firstAttribute="trailing" secondItem="6Ct-bt-FcF" secondAttribute="trailing" id="JAb-XN-oZ4"/>
+                            <constraint firstItem="iAt-cM-jfu" firstAttribute="top" secondItem="6Ct-bt-FcF" secondAttribute="bottom" id="Z8V-BV-MHn"/>
+                            <constraint firstItem="6Ct-bt-FcF" firstAttribute="leading" secondItem="g7C-CL-U72" secondAttribute="leading" id="tFg-Lh-GVr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="6Ct-bt-FcF" id="peU-Bh-Un1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ysx-Rc-KV7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1574" y="165"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rEV-cK-dmz">
@@ -80,7 +112,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Exg-he-n4x">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

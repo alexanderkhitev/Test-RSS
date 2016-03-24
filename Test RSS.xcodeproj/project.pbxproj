@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		08E56E78ABB23C2474C2AC1F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 114FAF04D7E6F7AB01BDFF46 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A6706FFB1CA43BB600766A45 /* Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = A6706FFA1CA43BB600766A45 /* Bridge.m */; };
+		A67070001CA43E9A00766A45 /* WebShowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6706FFF1CA43E9A00766A45 /* WebShowerViewController.swift */; };
 		A6BBF9061BE756A800D804ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BBF9051BE756A800D804ED /* AppDelegate.swift */; };
 		A6BBF90B1BE756A900D804ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6BBF9091BE756A800D804ED /* Main.storyboard */; };
 		A6BBF90E1BE756A900D804ED /* Test_RSS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A6BBF90C1BE756A900D804ED /* Test_RSS.xcdatamodeld */; };
@@ -40,6 +42,9 @@
 /* Begin PBXFileReference section */
 		114FAF04D7E6F7AB01BDFF46 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C29A6B4D03F0FCE8A622C4C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A6706FF91CA43BB500766A45 /* Test RSS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Test RSS-Bridging-Header.h"; sourceTree = "<group>"; };
+		A6706FFA1CA43BB600766A45 /* Bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bridge.m; sourceTree = "<group>"; };
+		A6706FFF1CA43E9A00766A45 /* WebShowerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebShowerViewController.swift; sourceTree = "<group>"; };
 		A6BBF9021BE756A800D804ED /* Test RSS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test RSS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BBF9051BE756A800D804ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6BBF90A1BE756A800D804ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,6 +100,42 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A6706FF81CA43B9C00766A45 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				A6706FFA1CA43BB600766A45 /* Bridge.m */,
+				A6706FF91CA43BB500766A45 /* Test RSS-Bridging-Header.h */,
+			);
+			name = Bridge;
+			sourceTree = "<group>";
+		};
+		A6706FFC1CA43D7000766A45 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A6BBF9361BE757C900D804ED /* MainTableViewController.swift */,
+				A6706FFF1CA43E9A00766A45 /* WebShowerViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A6706FFD1CA43D7C00766A45 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A6BBF9381BE757D500D804ED /* MainTableViewCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		A6706FFE1CA43D8C00766A45 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				A6BBF90F1BE756A900D804ED /* Assets.xcassets */,
+				A6BBF9091BE756A800D804ED /* Main.storyboard */,
+				A6BBF9111BE756A900D804ED /* LaunchScreen.storyboard */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
 		A6BBF8F91BE756A800D804ED = {
 			isa = PBXGroup;
 			children = (
@@ -121,13 +162,12 @@
 			isa = PBXGroup;
 			children = (
 				A6BBF9051BE756A800D804ED /* AppDelegate.swift */,
-				A6BBF9361BE757C900D804ED /* MainTableViewController.swift */,
-				A6BBF9381BE757D500D804ED /* MainTableViewCell.swift */,
-				A6BBF9091BE756A800D804ED /* Main.storyboard */,
-				A6BBF90F1BE756A900D804ED /* Assets.xcassets */,
-				A6BBF9111BE756A900D804ED /* LaunchScreen.storyboard */,
+				A6706FFC1CA43D7000766A45 /* Controllers */,
+				A6706FFD1CA43D7C00766A45 /* Cell */,
+				A6706FFE1CA43D8C00766A45 /* Interface */,
 				A6BBF9141BE756A900D804ED /* Info.plist */,
 				A6BBF90C1BE756A900D804ED /* Test_RSS.xcdatamodeld */,
+				A6706FF81CA43B9C00766A45 /* Bridge */,
 			);
 			path = "Test RSS";
 			sourceTree = "<group>";
@@ -224,7 +264,7 @@
 		A6BBF8FA1BE756A800D804ED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Alexsander Khitev";
 				TargetAttributes = {
@@ -343,6 +383,8 @@
 			files = (
 				A6BBF9061BE756A800D804ED /* AppDelegate.swift in Sources */,
 				A6BBF9371BE757C900D804ED /* MainTableViewController.swift in Sources */,
+				A6706FFB1CA43BB600766A45 /* Bridge.m in Sources */,
+				A67070001CA43E9A00766A45 /* WebShowerViewController.swift in Sources */,
 				A6BBF9391BE757D500D804ED /* MainTableViewCell.swift in Sources */,
 				A6BBF90E1BE756A900D804ED /* Test_RSS.xcdatamodeld in Sources */,
 			);
@@ -487,10 +529,13 @@
 			baseConfigurationReference = 9C29A6B4D03F0FCE8A622C4C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Test RSS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Alexsander-Khitev.Test-RSS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Test RSS/Test RSS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -499,10 +544,12 @@
 			baseConfigurationReference = C71B4F5084D6E1AA45739680 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Test RSS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Alexsander-Khitev.Test-RSS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Test RSS/Test RSS-Bridging-Header.h";
 			};
 			name = Release;
 		};
